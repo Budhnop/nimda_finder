@@ -315,10 +315,10 @@ if (Test-Path $PSScriptRoot"\"$FLAT_FILE){
   }   
 }
 else{
-  #First Run ou Fichier manquant
+  #First run, create file
   $colAllPrivUsers = $colAllPrivUsers | Sort-Object
 
-  #rajouter les informations dans le fichier 
+  #add information to file
   foreach ($item in $allPrivUsers) {
     $data = $item.SamAccountName + "|" + $item.MemberOf
     Add-Content -Path $PSScriptRoot"\"$FLAT_FILE $data
